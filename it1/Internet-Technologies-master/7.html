@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Pets Information</title>
+    <style>
+        /* Styles for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pet-card {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .pet-card h2 {
+            margin-top: 0;
+        }
+
+        .pet-info {
+            margin-bottom: 10px;
+        }
+
+        .pet-info span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pets Information</h1>
+
+    <div id="petsContainer">
+        <!-- Pet information will be displayed here -->
+    </div>
+
+    <script>
+        const petsContainer = document.getElementById('petsContainer');
+
+        // Load JSON data using AJAX
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                const pets = JSON.parse(this.responseText);
+
+                // Display each pet's information
+                pets.forEach(function(pet) {
+                    const petCard = document.createElement('div');
+                    petCard.classList.add('pet-card');
+
+                    const petName = document.createElement('h2');
+                    petName.textContent = pet.name;
+
+                    const petInfo = document.createElement('div');
+                    petInfo.classList.add('pet-info');
+                    petInfo.innerHTML = `<span>Age:</span> ${pet.age}, <span>Weight:</span> ${pet.weight} pounds,
+                                        <span>Type:</span> ${pet.type}, <span>Likes:</span> ${pet.likes}`;
+
+                    petCard.appendChild(petName);
+                    petCard.appendChild(petInfo);
+                    petsContainer.appendChild(petCard);
+                });
+            }
+        };
+        xhttp.open('GET', 'pets.json', true);
+        xhttp.send();
+    </script>
+</body>
+</html>
+
+ <!-- JSON DATA 
+[
+  {
+    "name": "Buddy",
+    "age": 3,
+    "weight": 15.5,
+    "type": "dog",
+    "likesMost": "playing fetch"
+  },
+  {
+    "name": "Whiskers",
+    "age": 2,
+    "weight": 8.7,
+    "type": "cat",
+    "likesMost": "chasing laser pointers"
+  },
+  {
+    "name": "Tweety",
+    "age": 1,
+    "weight": 0.5,
+    "type": "bird",
+    "likesMost": "singing"
+  }
+]
+-->

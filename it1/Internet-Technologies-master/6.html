@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="petForm">
+        <label for="petName">Name:</label>
+        <input type="text" id="petName" name="petName" required>
+
+        <label for="petAge">Age:</label>
+        <input type="number" id="petAge" name="petAge" required>
+
+        <label for="petWeight">Weight:</label>
+        <input type="number" id="petWeight" name="petWeight" required>
+
+        <label for="petType">Type:</label>
+        <select id="petType" name="petType" required>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="bird">Bird</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="likesMost">Likes Most:</label>
+        <input type="text" id="likesMost" name="likesMost" required>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            // Get form values
+            var petName = document.getElementById('petName').value;
+            var petAge = document.getElementById('petAge').value;
+            var petWeight = document.getElementById('petWeight').value;
+            var petType = document.getElementById('petType').value;
+            var likesMost = document.getElementById('likesMost').value;
+
+            // Create a Pet object
+            var petObject = {
+                name: petName,
+                age: parseInt(petAge),
+                weight: parseFloat(petWeight),
+                type: petType,
+                likesMost: likesMost
+            };
+
+            // Log the Pet object and its equivalent JSON to the console
+            console.log('Pet Object:', petObject);
+            console.log('JSON Equivalent:', JSON.stringify(petObject));
+        }
+    </script>
+
+</body>
+</html>

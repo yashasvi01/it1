@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Sc. Hons CS Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>B.Sc. Hons Computer Science Course</h1>
+
+    <section>
+        <h2>Course Details</h2>
+        <p>
+            B.Sc. Hons Computer Science is an undergraduate program that focuses on computer science and its various applications.
+        </p>
+        <h2>Fee Structure</h2>
+        <p>
+            The fee for the entire course is [Enter Fee Details].
+        </p>
+        <h2>Eligibility Criteria</h2>
+        <p>
+            To be eligible for this course, students should have completed their 10+2 with a minimum of [Enter Eligibility Criteria].
+        </p>
+        <h2>Papers and Credits</h2>
+        <p>
+            The course includes various papers, each with its name and corresponding credit hours.
+            <ul>
+                <li>Introduction to Computer Science - 3 Credits</li>
+                <li>Data Structures and Algorithms - 4 Credits</li>
+                <li>Database Management Systems - 3 Credits</li>
+                <li>Operating Systems - 4 Credits</li>
+                <li>Software Engineering - 3 Credits</li>
+                <!-- Add more papers as needed -->
+            </ul>
+        </p>
+        <h2>Future Possibilities</h2>
+        <p>
+            After completing this course, students can pursue careers in software development, data analysis, system administration, and more.
+        </p>
+    </section>
+
+    <button id="styleButton">Style Page</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // jQuery code to style the page
+        $(document).ready(function() {
+            $('#styleButton').click(function() {
+                $('body').css({
+                    'background-color': '#f4f4f4',
+                    'color': '#333'
+                });
+
+                $('h1, h2').css({
+                    'color': '#4CAF50'
+                });
+
+                $('p').css({
+                    'color': '#666'
+                });
+
+                $('button').css({
+                    'background-color': '#333',
+                    'color': '#fff'
+                });
+
+                $(this).text('Page Styled');
+            });
+        });
+    </script>
+
+</body>
+</html>
